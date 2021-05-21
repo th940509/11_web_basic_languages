@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- 2021/05/21 17:02 ~ 17:20-->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원 가입</title>
+</head>
+<body>
+
+<form>
+	<fieldset>
+	<legend>회원가입 폼</legend>
+	<p><label>이름: <input type="text" name="name"></label></p>
+	<p><label>아이디: <input type="text" name="id"></label></p>
+	<p><label>비밀번호: <input type="password" name="password"></label></p>
+	<p><label>나이: <input type="text" name="age"></label></p>
+	<p>
+		성별: 
+		<input type="radio" name="gender" value="man"> 남자
+		<input type="radio" name="gender" value="woman"> 여자
+	</p>
+	<p>
+		취미:
+		<input type="checkbox" name="hobby" value="exercise"> 운동
+		<input type="checkbox" name="hobby" value="sleep"> 잠자기
+		<input type="checkbox" name="hobby" value="study"> 공부하기
+	</p>
+	<p>
+		가고싶은 여행지는?
+		<select name="여행지">
+			<option value="괌"> 괌
+			<option value="다낭"> 다낭
+			<option value="나트랑"> 나트랑
+			<option value="코타키나발루"> 코타키나발루
+			<option value="대만"> 대만
+			<option value="푸꾸옥"> 푸꾸옥
+		</select>
+	
+	<p>메모</p>
+		<p><textarea rows="5" cols="50" name="memo"></textarea></p>
+	<input type="submit" value="회원가입">
+	<input type="reset" value="다시쓰기">
+	</fieldset>
+</form>
+
+</body>
+</html>
+
