@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>데이터의 형변환(casting))</title>
+</head>
+<script>
+
+	// 1) 정수  -> 문자열  (String()감싸주기)
+	var nData = 1;
+	var parseNData = String(nData); // String(정수형 변수)
+	
+	console.log(typeof nData);
+	console.log(typeof parseNData);
+	console.log("==============");
+	
+	// 2) 문자열 -> 숫자 (Number()감싸주기)
+	var strData1 = "100";
+	var parseStrData1_1 = Number(strData1); // Number(문자열 변수)
+	var parseStrData1_2 = parseInt(strData1); // Number(문자열 변수)
+	
+	
+	console.log(typeof strData1);
+	console.log(typeof parseStrData1_1);
+	console.log(typeof parseStrData1_2);
+	console.log("==============");
+	
+	// 3) 실수 -> 문자열
+	var fData = 3.4;
+	var parseFData = String(fData);
+	
+	console.log(typeof parseFData);
+	console.log("==============");
+	
+	// 4) 문자열 -> 실수
+	var strData2 = "7.777";
+	var parseStrData2_1 = Number(strData2) // Number(문자열 변수)
+	var parseStrData2_2 = parseInt(strData2) // parseInt(문자열 변수)
+	
+	console.log(typeof strData2);
+	console.log(typeof parseStrData2_1);
+	console.log(typeof parseStrData2_2);
+	console.log("=============")
+	
+</script>
+<body>
+
+</body>
+</html>
