@@ -53,8 +53,8 @@
 		console.log("text: " + document.getElementById("content1").innerHTML);   // jquery 형태 : $("#content1").text();
 	}
 	
-	function process3_2(){
-		
+	function process3_2(msg){
+		document.getElementById("content1").innerHTML = msg;
 	}
 	
 </script>
@@ -90,7 +90,7 @@
 	    <div id="content1">원본 메세지1 입니다.</div>
 		<p>
 		    <input type="button" onclick="process3_1()" value="버튼">
-		    <input type="button" onclick="process3_2()" value="수정버튼">
+		    <input type="button" onclick="process3_2('수정된 메세지 입니다')" value="수정버튼">
 	    </p>
     </fieldset>
     
