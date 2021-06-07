@@ -1,4 +1,4 @@
-# 2021/06/02 17:32 ~ 
+# 2021/06/05 08:19 ~  08:40
 
 # 문제 1) d003부서가 아닌 매니저들의 사원번호 , 부서번호를 조회하기.
 SELECT
@@ -66,16 +66,48 @@ WHERE
 		FROM_DATE >= '1990-01-01' AND SALARY >= 60000;
 
 # 문제 8) d001부서와 d002부서 매니저의 사원번호 , 부서번호 조회하기.
-		
-
+SELECT
+	EMP_NO,
+    DEPT_NO
+FROM
+	DEPT_EMP
+WHERE
+	DEPT_NO = "D001" OR DEPT_NO = "D002";
+    
 # 문제 9) 직함이 Staff인 사원과 Engineer인 사원의 사원번호 , 직함을 조회하기.
-
-
+SELECT
+		EMP_NO,
+        TITLE
+FROM
+		TITLES
+WHERE
+		TITLE = "STAFF" OR TITLE = "ENGINEER";
+	
 # 문제 10) d003부서의 매니저만 제외한 매니저의 사원번호 , 부서번호를 조회하기.
-
+SELECT
+		DEPT_NO,
+        EMP_NO
+FROM
+		DEPT_MANAGER
+WHERE
+		NOT(DEPT_NO = "D003");
 
 # 문제 11) 이름에 'o' 가 포함되어 있는 사원의 사원번호 , 이름을 조회하기.
-
+SELECT
+		EMP_NO,
+        FIRST_NAME,
+        LAST_NAME
+FROM
+		employees
+WHERE
+		FIRST_NAME LIKE "%O%" OR LAST_NAME LIKE "%O%";
 	
 # 문제 12) 이름에 'o' 가 포함되어 있고 마지막글자가 'o'가 아닌 사원의 사원번호 , 이름을 조회하기.
 
+SELECT
+		EMP_NO,
+        FIRST_NAME
+FROM
+		EMPLOYEES
+WHERE 
+		FIRST_NAME LIKE "%O%" AND NOT(FIRST_NAME LIKE "%O");
