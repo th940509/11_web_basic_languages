@@ -33,17 +33,42 @@ WHERE
 		DE.DEPT_NO = D.DEPT_NO;
 
 # 1-3) INNER JOIN사용
-
- 
+SELECT
+		DE.EMP_NO AS EMP_NO,
+        D.DEPT_NO AS DEPT_NO,
+        D.DEPT_NAME AS DEPT_NAME
+FROM
+		DEPT_EMP DE
+	  INNER JOIN DEPARTMENTS D
+			  ON DE.DEPT_NO = D.DEPT_NO;
+           #JOIN DEPARTMENTS D  * INNER 키워드는 생략이 가능함.
+			 #ON DE.DEPT_NO = D.DEPT_NO;
 
 # 예시 2) 직원의 사원번호 , 이름(first,last) , 및 업무를 조회하기.
-
-    
+SELECT
+		T.EMP_NO     AS EMP_NO,
+        T.TITLE      AS TITLE,
+        E.FIRST_NAME AS FIRST_NAME,
+        E.LAST_NAME  AS LAST_NAME
+FROM
+		EMPLOYEES E
+	   INNER JOIN TITLES T
+               ON E.EMP_NO = T.EMP_NO; 
     
 # 예시 3) 사원번호 , 사원이름(first_name,last_name) , 부서번호 , 부서이름을 조회하기.
-
-
-
+SELECT
+		E.EMP_NO     AS EMP_NO,
+        E.FIRST_NAME AS FIRST_NAME,
+        E.LAST_NAME  AS LAST_NAME,
+        DE.DEPT_NO   AS DEPT_NO,
+        D.DEPT_NAME  AS DEPT_NAME
+FROM
+		EMPLOYEES E
+	   INNER JOIN DEPT_EMP DE
+			   ON E.EMP_NO = DE.EMP_NO
+	   INNER JOIN DEPARTMENTS D
+			   ON DE.DEPT_NO = D.DEPT_NO;
+               
 # INNER JOIN , LEFT JOIN , RIGHT JOIN 테스트를 위한 데이터 셋업
 CREATE TABLE GIRL_GROUP ( 
 	_ID INT PRIMARY KEY AUTO_INCREMENT, 
@@ -88,19 +113,39 @@ INSERT INTO girl_group (name, debut) VALUES ('에프터 스쿨', '2009-11-25');
 INSERT INTO girl_group (name, debut) VALUES ('포미닛', '2009-08-28');
 
 # 확인) SONG 전체 테이블 조회
-
+SELECT
+		*
+FROM
+		SONG;
     
 # 확인) GIRL_GROUP 전체 테이블 조회
-
+SELECT
+		*
+FROM
+		GIRL_GROUP;
     
-
 # 예시 1) INNER JOIN : ID와 HIT_SONG_ID가 같은 row만 조회.
-
-
+SELECT
+		*
+FROM
+		GIRL_GROUP GG
+	    INNER JOIN SONG S
+                ON GG.HIT_SONG_ID=S._ID;
+                
 # 예시 2) LEFT JOIN : GIRL_GROUP의 데이터는 모두 조회되고 ID와 HIT_SONG_ID가 같은 row를 조회.
-
+SELECT
+		*
+FROM
+		GIRL_GROUP GG
+   LEFT OUTER JOIN SONG S    # OUTER는 생략 가능함.
+                ON GG.HIT_SONG_ID=S._ID;
           
 # 예시 3) RIGHT JOIN : SONG의 데이터는 모두 조회되고 ID와 HIT_SONG_ID가 같은 row를 조회
-
+SELECT
+		*
+FROM
+		GIRL_GROUP GG
+  RIGHT OUTER JOIN SONG S    # OUTER는 생략 가능함.
+                ON GG.HIT_SONG_ID=S._ID;
 
 
