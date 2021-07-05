@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연습예시2</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>
+	
+	$(document).ready( function() {
+		
+		$("#plus, #minus, #multi").click(function() { // id가 plus,minus,multi인 것을 click하면 실행되는 함수
+			
+			var calculate = $(this).val(); // 변수 calculate에 this의 value값을 대입
+			var n1 = $("#num1").val(); // 변수 n1에 id가 num1인 것의 value값을 대입
+			var n2 = $("#num2").val(); // 변수 n2에 id가 num2인 것의 value값을 대임
+			
+			// 문자 => 숫자 변환
+			var num1 = parseInt(n1);
+			var num2 = parseInt(n2);
+			
+			var result = 0;
+			var operator = "";
+			
+			switch(calculate){ // 자바스크립트 switch case 문 -> switch(판단값)
+			                   // calculate가 '합'일 경우 1번의 case문이 실행됨
+			case "합":
+				result = num1 + num2;
+				operator = "+";
+				break;
+				
+			case "차":
+				result = num1 - num2;
+				operator = "-";
+				break;
+				
+			case "곱":
+				result = num1 * num2;
+				operator = "*"
+				break;
+			}
+			
+			$("#result").val(result);
+			$("#op").text(operator);
+			
+		});
+		
+	});	
+</script>
+
+</head>
+<body>
+
+	<input type="text" id="num1" size="5" /> <span id="op"> , </span>
+	<input type="text" id="num2" size="5" /> =
+	<input type="text" id="result" size="7" />
+	
+	<hr>
+	
+	<input type="button" id="plus" value="합" />
+	<input type="button" id="minus" value="차" />
+	<input type="button" id="multi" value="곱" />
+	
+</body>
+</html>

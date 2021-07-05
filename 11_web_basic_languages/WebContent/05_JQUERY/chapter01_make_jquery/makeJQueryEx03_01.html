@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트의 onload함수</title>
+<script>
+	// 스크립트의 실행 보다 html이 화면에 보여지는 순서가 느리므로 해당 스크립트의 기능은 동작하지 않는다.
+	// document.getElementById("test").style.backgroundColor="red";
+	
+	// 페이지의 DOM요소들이 모두 로드가 된  후에 실행이 되는 함수
+	window.onload = function() {
+		document.getElementById("test").style.backgroundColor="red";
+	}
+</script>
+</head>
+<body>
+	<div id="test">test page</div>
+</body>
+</html>
