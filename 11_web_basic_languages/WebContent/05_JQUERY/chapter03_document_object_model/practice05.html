@@ -1,0 +1,60 @@
+<!-- *분석 2021/07/06 17:12 ~ 17:19 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연습예시5</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>
+		
+		$().ready(function(){ // html의 돔요소들이 실행된 후 실행되는 함수
+			
+			$("#answer").click(function(){ // id가 answer인 것을 클릭했을 때 실행되는 함수
+				
+				var isExsists = false;
+				var inputBrowser =$("#inputBrowser").val(); // id가 inputBrowser인 것의 value값(입력한 값)을 변수에 대입
+				
+				$("input[name='browser']").each(function(){ // input태그 중 name이 browser인 것을 반복
+					if (inputBrowser == $(this).val()) { // 위의 변수 inputBrowser의 값과 chrome, fireFox, exploreEdge 가 같은 경우 ( each가 실행되면서 1개씩 비교 )
+						$(this).prop("checked",true); // this의 속성을 checked,true로 변경
+						isExsists = true;
+					}
+				})
+				
+				if (!isExsists) { // isExsists가 false일 경우
+					alert("값이 존재하지 않습니다.");
+				}
+				
+	
+			})	
+			
+			
+		});
+	
+	</script>
+</head>
+<body>
+	
+	<!--  
+		
+		키보드로 화면에 보이는 브라우저의 이름을 입력하고 버튼을 클릭하면  
+		해당 브라우저의 이름이 radio에 체크되도록 스크립트를 작성 해보시오.
+		( 단 없는 데이터가 입력될 경우 "값이 존재하지 않습니다"를 출력)
+
+	-->
+
+	<fieldset>
+	  	<p>
+			<label for="inputBrowser">브라우저입력 : </label>
+			<input type="text" id="inputBrowser" >
+			<input type="button" value="버튼" id="answer" >
+		</p>
+		<p>
+			<label for="browser">브라우저 : </label>
+			<input type="radio" name="browser" value="chrome" checked> chrome
+			<input type="radio" name="browser" value="fireFox"> fireFox
+			<input type="radio" name="browser" value="exploreEdge"> exploreEdge
+		</p>
+	</fieldset>	
+</body>
+</html>

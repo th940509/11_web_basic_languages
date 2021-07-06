@@ -1,0 +1,48 @@
+<!-- *분석 2021/07/06 17:19 ~ 17:19 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"> 
+<title>연습예시6</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>
+
+	$().ready(function(){ // html 돔요소가 실행된 후 실행되는 함수
+		$("#answer").click(function(){ // id가 answer인 것을 클릭하면 실행되는 함수
+			var answer = $("#grade").val(); // answer 변수에 id가 grade인 것의 value를 대입(select박스의 value)
+			$("#choiceGrade").val(answer); // id가 choiceGrade인 것의 value에 위의 변수를 대입
+			$("#choiceGrade").prop("disabled",true); // input 태그 : disabled, true 적용(비활성화)
+			$("#choiceGradeLabel").text("선택된 학년"); // id가 choiceGradeLabel의 text인 결과 -> 선택된 학년 으로 변경
+		})
+	});
+
+</script>
+</head>
+<body>
+
+	<!-- 
+		
+		셀렉트 박스에서 학년을 선택하고 버튼을 클릭하면 화면에 
+		
+		1) choiceGradeLabel의 텍스트를 '선택된 학년'으로 변경하고
+		2) choiceGrade의 값을 셀렉트 박스에서 선택한 값이 보이도록 변경하고
+		3) choiceGrade의 값을 수정할 수 없도록 
+		
+		스크립트를 작성해보시오.
+		
+	 -->
+
+    <p>
+        <label>학년 : </label>
+        <select id="grade">
+            <option value="1학년">1학년</option>
+            <option value="2학년">2학년</option>
+            <option value="3학년">3학년</option>
+        </select>
+        <input type="button" value="버튼" id="answer">
+    </p>
+    <p>
+        <span id="choiceGradeLabel">결과 </span> : <input type="text" id="choiceGrade">
+    </p>
+</body>
+</html>
