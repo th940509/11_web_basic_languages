@@ -1,3 +1,5 @@
+<!-- *분석 2021/07/07 00:47 ~  00:52-->
+<!-- *평가: 셀렉터의 선택자에 대해 복습 필요함. id 선택자일 경우 $("#id명"), 태그 선택자일 경우 $("태그명"), 네임 선택자일 경우 $("태그명[name=' ']")를 사용하며 위의 3가지는 자주 사용되므로 숙지할 필요 있음.-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,21 +8,21 @@
 <script src="../js/jquery-3.6.0.min.js"></script>
 <script>
 	
-	$(document).ready(function(){
+	$(document).ready(function(){ // 돔 요소를 실행한 후 실행되는 함수
 		
-		$("#btn1").click(function(){ 
-			var target1 = $("#target1").html();
-			alert("target1 : " + target1);
-			$("#target1").html("<h2>변경된 데이터 입니다.</h2>");
+		$("#btn1").click(function(){ // id가 btn1인 것을 클릭하면 실행되는 함수
+			var target1 = $("#target1").html(); // id가 target1인 것의 html(타겟데이터1입니다.)을 변수target1에 대입
+			alert("target1 : " + target1); // alert을 사용하여 화면에 출력
+			$("#target1").html("<h2>변경된 데이터 입니다.</h2>"); // id가 target1인 것의 html값을 지정하여 변경
 		}); 
 		
-		$("#btn2").click(function(){
-			$("#target2").html("");
+		$("#btn2").click(function(){ // id가 btn2인 것을 클릭하면 실행되는 함수
+			$("#target2").html(""); // id가 target2인 것의 html값을 ""로 지정하여 변경
 		});
 		
-		$(".btn3").click(function(){
-			var p = $("p").html();
-			alert(p);
+		$(".btn3").click(function(){ // id가 btn3인 것을 클릭하면 실행되는 함수
+			var p = $("p").html(); // p태그의 html값을 가져와 변수p에 대입
+			alert(p); // alert를 사용하여 화면에 출력
 		});
 	});
 </script>

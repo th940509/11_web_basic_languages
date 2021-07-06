@@ -1,3 +1,7 @@
+<!-- *분석 2021/07/07 01:03 ~ 01:15-->
+<!-- *평가: jQuery에서의 text(), html() 함수의 기능을 구별하는 것이 어려워 구글링을 통하여 정확하게 숙지함. text() 함수의 경우 태그를 제외한 문자열만  html() 함수의 경우 태그를 포함한 문자열을 모두 가지고옴.
+                        태그 내에 순수하게 문자열만 존재할 경우 text(), html()함수 중 원하는 것을 사용하여도 무관하나 태그가 들어있는 경우라면 상황에 따라 알맞은 함수를 사용해야 한다는 것에 대해 이해하였으며, text(), html()함수 안에
+           '입력: <input type="text"><br>'와 같은 동적인 텍스트 태그를 대입할 시 text()함수의 경우 태그를 포함하여 문자열로 출력되는 반면 html()의 경우 태그를 인식하여 텍스트 태그 를 출력한다는 것에 대해 알 수 있었음. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,17 +10,17 @@
 <script src="../js/jquery-3.6.0.min.js"></script>
 <script>
 
-	$().ready(function(){
+	$().ready(function(){ // 돔요소 실행 후 실행되는 함수
 		
-        $("#answer").click(function(){
+        $("#answer").click(function(){ // id가 answer인 것을 클릭하면 실행되는 함수
            
         	var resultData = "선택된 데이터 : ";
         	
-        	$("input[name='subjects']:checked").each(function(){
-        		resultData += $(this).val() + " ";
+        	$("input[name='subjects']:checked").each(function(){ // input태그(checkbox)의 name이 subjects인 것 중 선택된 것들에 each 함수 적용
+        		resultData += $(this).val() + " "; // this(subjects 중 선택된 것들이 each 함수에 의하여  1개씩 실행)의 value를 resultData에 +함
         	})
 			
-        	$("#result").text(resultData);
+        	$("#result").text(resultData); // id가 result인것의 text에 resultData값을 지정함.
         }) 
         
 	})

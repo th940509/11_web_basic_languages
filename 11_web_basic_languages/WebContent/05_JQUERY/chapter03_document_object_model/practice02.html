@@ -1,3 +1,6 @@
+<!-- *분석 2021/07/07 00:39 ~ 00:47-->
+<!-- *평가: this의 값을 찾는 것이 어려웠음. this의 값을 찾기 어려울 경우 alert를 사용하여 화면에 출력하여 어떤 값이 나오는 지 직접 찾아 보면서 알아 볼 수 있었음.
+                        자바 스크립트의 switch case문을 구글링 하여 다시 복습함. -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +13,7 @@
 		
 		$("#plus, #minus, #multi").click(function() { // id가 plus,minus,multi인 것을 click하면 실행되는 함수
 			
-			var calculate = $(this).val(); // 변수 calculate에 this의 value값을 대입
+			var calculate = $(this).val(); // 변수 calculate에 this(위의 plus,minus,multi중 클릭 된 것)의 value값을 대입
 			var n1 = $("#num1").val(); // 변수 n1에 id가 num1인 것의 value값을 대입
 			var n2 = $("#num2").val(); // 변수 n2에 id가 num2인 것의 value값을 대임
 			
