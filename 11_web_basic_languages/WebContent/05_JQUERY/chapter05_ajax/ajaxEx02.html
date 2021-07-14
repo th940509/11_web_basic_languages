@@ -58,6 +58,12 @@
 					$("#id").prop("disabled", true);					
 					$("#pwd").prop("disabled", true);					
 					$("#account").prop("disabled", true);					
+				},
+				error  : function() { // 통신이 실패했을 경우 실행되는 이벤트
+					alert("통신실패");
+					$("#id").val("");
+					$("#pwd").val("");
+					$("#account").val("");
 				}
 			}); 
 		});
