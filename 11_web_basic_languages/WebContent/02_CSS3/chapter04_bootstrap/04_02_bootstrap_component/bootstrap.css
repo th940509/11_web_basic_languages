@@ -343,7 +343,7 @@ select {
 }
 
 select {
-  word-wrap: normal;
+  word-wrap: normal;v
 }
 
 select:disabled {
